@@ -1,10 +1,7 @@
 package tech.geterrays.bookmnager.book.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Blob;
 import java.time.LocalDate;
 
 
@@ -38,7 +35,7 @@ public class Book implements Serializable {
         this.totalExamplaries = totalExamplaries;
         this.author = author;
         this.imageUrl = imageUrl;
-        this.data =data;
+        this.data = data;
     }
 
     public Long getId() {

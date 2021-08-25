@@ -23,22 +23,20 @@ public class BookResource {
         this.bookService = bookService;
 
     }
-
-    @CrossOrigin
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/all")
     public ResponseEntity<List<Book>> getAllBooks() {
         List<Book> books = bookService.findAllBooks();
         return new ResponseEntity<>(books, HttpStatus.OK);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/find/{id}")
     public ResponseEntity<Book> getBookById(@PathVariable("id") Long id) {
         Book book = bookService.findBookById(id);
         return new ResponseEntity<>(book, HttpStatus.OK);
     }
-
-    @CrossOrigin
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/add")
     public ResponseEntity<Book> addBook(@RequestBody Book book) {
         Book newBook = bookService.addBook(book);
@@ -60,14 +58,14 @@ public class BookResource {
 //
 
 
-    @CrossOrigin
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/update")
     public ResponseEntity<Book> updateBook(@RequestBody Book book) {
         Book updateBook = bookService.updateBook(book);
         return new ResponseEntity<>(updateBook, HttpStatus.OK);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteBook(@PathVariable("id") Long id) {
         bookService.deleteBook(id);
